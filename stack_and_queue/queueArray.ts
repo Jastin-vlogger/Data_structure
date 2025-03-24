@@ -13,7 +13,7 @@ class queue {
   }
 
   peek() {
-    return this.items[0];
+    return this.items[0];       
   }
 
   size() {
