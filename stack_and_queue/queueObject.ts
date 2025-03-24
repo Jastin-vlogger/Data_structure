@@ -1,5 +1,5 @@
 class QueueObjects {
-    items : object = {}
+    items : any
     front: number = 0;
     rear:number = 0;
     constructor() {
