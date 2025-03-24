@@ -1,16 +1,16 @@
 class hashTable {
   table: Array<any>;
   size: any;
-  constructor(size: Number) {
+  constructor(size: number) {
     this.table = new Array(size);
     this.size = size;
   }
-  hash(key: any) {
+  hash(key: string) {
     let total: number = 0;
     for (let i = 0; i < key.length; i++) {
       total += key.charCodeAt(i);
     }
-      return total % this.size ;
+    return total % this.size;
   }
 
   set(key: any, value: any) {
@@ -27,11 +27,11 @@ class hashTable {
       }
     }
   }
-  get(key: any) {
-    const index: any = this.hash(key);
+  get(key: string) {
+    const index = this.hash(key);
     const bucket = this.table[index];
     if (bucket) {
-      const sameKey: any = bucket.find((item: any) => item[0] === key);
+      const sameKey = bucket.find((item: any) => item[0] === key);
       if (sameKey) {
         return sameKey[1];
       }
@@ -39,8 +39,8 @@ class hashTable {
     return undefined;
   }
 
-  remove(key: any) {
-    const index: any = this.hash(key);
+  remove(key: string) {
+    const index = this.hash(key);
     const bucket = this.table[index];
     if (bucket) {
       let sameKey = bucket.find((item: any) => item[0] === key);
